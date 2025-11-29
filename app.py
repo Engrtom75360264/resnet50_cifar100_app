@@ -47,7 +47,7 @@ def predict(img):
 # 3. Streamlit UI
 # ---------------------------------------------------
 st.title("🐯 CIFAR-100 Image Classifier (ResNet-50)")
-st.write("Upload an image OR choose one of the sample CIFAR-100 images.")
+st.write("Upload an image OR choose one of the 10 CIFAR-10 sample images.")
 
 # ---------------------------------------------------
 # Upload Section
@@ -67,18 +67,18 @@ if upload_file:
 st.markdown("---")
 
 # ---------------------------------------------------
-# Section: Select from CIFAR-100 Samples
+# Section: Select from CIFAR-10 Samples (10 samples only)
 # ---------------------------------------------------
-st.subheader("🖼️ Use CIFAR-100 Sample Images")
+st.subheader("🖼️ Choose From 10 CIFAR-100 Sample Images")
 
-sample_dir = "cifar100_samples"   # Folder containing your 100 PNG files
+sample_dir = "cifar10_samples"   # <--- your 10 images folder
 
 if not os.path.exists(sample_dir):
-    st.error("Sample image folder not found! (expected: cifar100_samples/)")
+    st.error("Sample image folder not found! (expected: cifar100_10_samples/)")
 else:
     all_samples = sorted(os.listdir(sample_dir))
 
-    selected = st.selectbox("Select a CIFAR-100 Image:", all_samples)
+    selected = st.selectbox("Select a CIFAR-10 Sample Image:", all_samples)
 
     if selected:
         img_path = os.path.join(sample_dir, selected)
