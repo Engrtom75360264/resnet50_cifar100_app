@@ -1,3 +1,6 @@
+# Point to PyTorch CPU wheels
+-f https://download.pytorch.org/whl/torch_stable.html
+
 streamlit==1.39.0
 torch==2.3.0+cpu
 torchvision==0.18.0+cpu
@@ -6,6 +9,3 @@ Pillow==10.2.0
 scikit-learn==1.4.2
 tqdm==4.66.1
 joblib==1.3.2
-
-# Add this at the end to tell pip where to find the CPU wheels
--f https://download.pytorch.org/whl/torch_stable.html
